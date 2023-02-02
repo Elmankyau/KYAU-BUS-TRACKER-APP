@@ -1,10 +1,11 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import {Marker} from 'react-leaflet'
 
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '95%',
+  height: '550px'
 };
 
 const center = {
@@ -12,10 +13,12 @@ const center = {
   lng: 90.4125
 };
 
+
 function Map(props) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyB16nQHoNGmnVfRM8q6Ha2AXowviSHTdgo"
+    
   })
 
   const [map, setMap] = React.useState(null)
@@ -27,6 +30,8 @@ function Map(props) {
       lat: props.lat,
       lng: props.lng
     });
+    <Marker position={[props.lat, props.lng]}></Marker>
+
     map.fitBounds(bounds);
 
     setMap(map)
@@ -37,7 +42,9 @@ function Map(props) {
   }, [])
 
   return isLoaded ? (
+    
       <GoogleMap
+      
         mapContainerStyle={containerStyle}
         center={center}
         zoom={20}

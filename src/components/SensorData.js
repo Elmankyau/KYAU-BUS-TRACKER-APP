@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 
 // var GPS;
@@ -23,7 +22,7 @@ function SensorData() {
     //   Longitude = response.data.Longitude;
     //   console.log("Longitude = " + Longitude);
     });
-  return <div>Getting Sensor data from firebase...</div>;
+  return;
 }
 
 export default SensorData;

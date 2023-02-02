@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import SensorData from './components/SensorData';
 import Map from './components/Map';
@@ -18,23 +17,20 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+       <h1>Bus Location</h1>
+       <SensorData/>
 
-        <SensorData/>
-
-        <a
+       {/* <a
           className="App-link"
           href="https://console.firebase.google.com/u/1/project/dht-11-7fe63/database/dht-11-7fe63-default-rtdb/data"
           target="_blank"
           rel="noopener noreferrer"
         >
           Visit firebase
-        </a>
-        
-        <Map lat ={parseFloat(Latitude)} lng ={parseFloat(Longitude)}/>
+        </a> */}
 
-      </header>
+       <Map lat ={parseFloat(Latitude)} lng ={parseFloat(Longitude)}/>
+
     </div>
   );
 }
