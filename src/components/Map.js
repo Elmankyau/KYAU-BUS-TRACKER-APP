@@ -7,25 +7,33 @@ const containerStyle = {
   height: "550px",
 };
 
-const center = { 
-  lat: 23.8103, 
-  lng: 90.4125
- }
+var Latitude = parseFloat(localStorage.getItem("Latitude"));
+var Longitude = parseFloat(localStorage.getItem("Longitude"));
 
-function Map(props) {
+const center={
+  lat: Latitude,
+  lng: Longitude
+}
+
+// const center={
+//   lat: 24.2243,
+//   lng: 89.7058
+// }
+
+function Map() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyB16nQHoNGmnVfRM8q6Ha2AXowviSHTdgo",
   });
+  
 
   const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(map) {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    // const bounds = new window.google.maps.LatLngBounds(center);
+    
     const bounds = new window.google.maps.LatLngBounds({
-      lat: props.lat,
-      lng: props.lng,
+      lat: Latitude,
+      lng: Longitude,
     });
 
     map.fitBounds(bounds);

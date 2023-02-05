@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // var GPS;
-// var Latitude;
+// var Latitude;+
 // var Longitude;
 
 function SensorData() {
