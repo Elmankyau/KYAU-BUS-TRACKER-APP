@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.custom-bg {
+  color: #59165c; /* Replace with your desired color code */
+}
+.max-height-500 {
+  max-height: 500px !important; /* Adjust the maximum height as needed */
+}
